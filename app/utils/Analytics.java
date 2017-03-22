@@ -21,6 +21,10 @@ public class Analytics
     stats.bmi = calculateBMI(member, weight);
     stats.bmiCategory = determineBMICategory(stats.bmi);
     stats.isIdealBodyweight = isIdealBodyWeight(member, weight);
+    stats.trend = true;
+    if (assessments.size()>1) {
+      stats.trend = assessments.get(assessments.size() - 2).weight > assessments.get(assessments.size() - 1).weight;
+    }
     return stats;
   }
 

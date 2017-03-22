@@ -5,6 +5,7 @@ Assessment(a1):
    upperarm: 23.3
    waist: 32
    hips: 38
+   trend: true
 
 Assessment(a2):
    weight: 123.3
@@ -13,6 +14,7 @@ Assessment(a2):
    upperarm: 23.3
    waist: 31
    hips: 36
+   trend: true
 
 Member(m1):
   email: homer@simpson.com

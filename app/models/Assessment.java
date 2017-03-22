@@ -14,6 +14,7 @@ public class Assessment extends Model
   public double upperarm;
   public double waist;
   public double hips;
+  public boolean trend;
 
   @Lob
   public String comment;

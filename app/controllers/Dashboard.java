@@ -26,6 +26,8 @@ public class Dashboard extends Controller
     Logger.info("Creating Assessment");
     Member member = Accounts.getLoggedInMember();
     Assessment assessment = new Assessment(weight, chest, thigh, upperarm, waist, hips);
+    MemberStats memberStats = Analytics.generateMemberStats(member);
+    assessment.trend = memberStats.trend;
     member.assessments.add(assessment);
     member.save();
     redirect("/dashboard");
