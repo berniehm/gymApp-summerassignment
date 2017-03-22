@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Member;
+import models.Trainer;
 import play.Logger;
 import play.mvc.Controller;
 
@@ -80,8 +81,15 @@ public class Accounts extends Controller
       session.put("logged_in_Memberid", member.id);
       Dashboard.index();
     } else {
-      Logger.info("Authentication failed");
-      login();
+      Trainer trainer = Trainer.findByEmail(email);
+      if ((trainer != null) && (trainer.checkPassword(password) == true)) {
+        Logger.info("Authentication successful");
+        session.put("logged_in_Trainerid", trainer.id);
+        TrainerDashboard.index();
+      } else {
+        Logger.info("Authentication failed");
+        login();
+      }
     }
   }
 }
