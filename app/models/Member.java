@@ -37,4 +37,9 @@ public class Member extends Model
   {
     return find("email", email).first();
   }
+
+  public boolean checkPassword(String password)
+  {
+    return this.password.equals(password);
+  }
 }
