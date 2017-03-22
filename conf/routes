@@ -20,6 +20,7 @@ GET     /about                                  About.index
 
 # Trainer page
 GET     /trainerdashboard                       TrainerDashboard.index
+GET     /trainerdashboard/deletemeber/{id}      TrainerDashboard.deleteMember
 GET     /trainerassessment/{id}                 TrainerDashboard.trainerAssessment
 POST    /editcomment/{id}                       TrainerDashboard.editComment
 

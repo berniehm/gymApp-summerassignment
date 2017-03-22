@@ -30,11 +30,19 @@ public class TrainerDashboard extends Controller
 
   public static void editComment(Long id, String comment)
   {
-    //Member member = Member.findById(id);
     Logger.info("Comment " + comment);
     Assessment assessment = Assessment.findById(id);
     assessment.comment = comment;
     assessment.save();
+    redirect("/trainerdashboard");
+  }
+
+  public static void deleteMember(Long id)
+  {
+    Member member = Member.findById(id);
+    if (member != null) {
+      member.delete();
+    }
     redirect("/trainerdashboard");
   }
 }

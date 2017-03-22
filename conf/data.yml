@@ -30,6 +30,16 @@ Member(m1):
   - a1
   - a2
 
+Member(m2):
+  email: bart@simpson.com
+  password: secret
+  name: Bart Simpson
+  address: Springfield, Mass
+  gender: Male
+  height: 1.2
+  startingweight: 67
+
+
 Trainer(t1):
   email: marge@simpson.com
   password: secret
