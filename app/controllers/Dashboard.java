@@ -22,4 +22,14 @@ public class Dashboard extends Controller
     }
     render("dashboard.html", member, assessments, bmi);
   }
+
+  public static void addAssessment(double weight, double chest, double thigh, double upperarm, double waist, double hips)
+  {
+    Logger.info("Creating Assessment");
+    Member member = Member.findByEmail("homer@simpson.com");
+    Assessment assessment = new Assessment(weight, chest, thigh, upperarm, waist, hips);
+    member.assessments.add(assessment);
+    member.save();
+    redirect("/dashboard");
+  }
 }

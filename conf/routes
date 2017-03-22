@@ -5,6 +5,7 @@
 # Home page
 GET     /                                       Dashboard.index
 GET     /dashboard                              Dashboard.index
+POST    /dashboard/addassessment                Dashboard.addAssessment
 GET     /about                                  About.index
 
 # Ignore favicon requests
