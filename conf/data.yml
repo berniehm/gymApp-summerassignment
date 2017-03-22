@@ -25,3 +25,7 @@ Member(m1):
   assessments:
   - a1
   - a2
+
+Trainer(t1):
+  email: marge@simpson.com
+  password: secret

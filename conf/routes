@@ -12,11 +12,16 @@ POST   /register                                Accounts.register
 GET    /settings                                Accounts.settings
 POST   /settings                                Accounts.updateSettings
 
-
 # Home page
 GET     /dashboard                              Dashboard.index
 POST    /dashboard/addassessment                Dashboard.addAssessment
 GET     /about                                  About.index
+
+# Trainer page
+GET     /trainerdashboard                       TrainerDashboard.index
+GET     /trainerassessment/{id}                 TrainerDashboard.trainerAssessment
+POST    /editcomment/{id}                       TrainerDashboard.editComment
+
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
