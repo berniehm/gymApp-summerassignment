@@ -9,6 +9,9 @@ GET    /login                                   Accounts.login
 GET    /logout                                  Accounts.logout
 POST   /authenticate                            Accounts.authenticate
 POST   /register                                Accounts.register
+GET    /settings                                Accounts.settings
+POST   /settings                                Accounts.updateSettings
+
 
 # Home page
 GET     /dashboard                              Dashboard.index
