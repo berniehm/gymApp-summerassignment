@@ -4,6 +4,7 @@ import play.db.jpa.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.Lob;
+import java.util.Date;
 
 @Entity
 public class Assessment extends Model
@@ -18,6 +19,7 @@ public class Assessment extends Model
 
   @Lob
   public String comment;
+  public Date date;
 
   public Assessment(double weight, double chest, double thigh, double upperarm, double waist, double hips)
   {
@@ -27,5 +29,6 @@ public class Assessment extends Model
     this.upperarm = upperarm;
     this.waist = waist;
     this.hips = hips;
+    this.date = new Date();
   }
 }

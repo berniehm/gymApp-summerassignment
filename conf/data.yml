@@ -6,6 +6,7 @@ Assessment(a1):
    waist: 32
    hips: 38
    trend: true
+   date: 2017-03-10 08:31:00
 
 Assessment(a2):
    weight: 123.3
@@ -15,6 +16,7 @@ Assessment(a2):
    waist: 31
    hips: 36
    trend: true
+   date: 2017-03-19 08:31:00
 
 Member(m1):
   email: homer@simpson.com
