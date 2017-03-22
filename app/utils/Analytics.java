@@ -20,6 +20,7 @@ public class Analytics
     }
     stats.bmi = calculateBMI(member, weight);
     stats.bmiCategory = determineBMICategory(stats.bmi);
+    stats.isIdealBodyweight = isIdealBodyWeight(member, weight);
     return stats;
   }
 
@@ -39,5 +40,32 @@ public class Analytics
       }
     }
     return "No category available.";
+  }
+
+  public static boolean isIdealBodyWeight(Member member, double weight)
+  {
+    double fiveFeet = 60.0;
+    double idealBodyWeight;
+
+    double inches = Conversion.convertMetresToInches(member.height, 2);
+
+    if (inches <= fiveFeet) {
+      if (member.gender.equals("M")) {
+        idealBodyWeight = 50;
+      } else {
+        idealBodyWeight = 45.5;
+      }
+    } else {
+      if (member.gender.equals("M")) {
+        idealBodyWeight = 50 + ((inches - fiveFeet) * 2.3);
+      } else {
+        idealBodyWeight = 45.5 + ((inches - fiveFeet) * 2.3);
+      }
+    }
+
+    Logger.info("Ideal Weigfht" + idealBodyWeight);
+    return ((idealBodyWeight <= (weight + 2.0))
+        && (idealBodyWeight >= (weight - 2.0))
+    );
   }
 }
