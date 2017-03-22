@@ -15,6 +15,7 @@ POST   /settings                                Accounts.updateSettings
 # Home page
 GET     /dashboard                              Dashboard.index
 POST    /dashboard/addassessment                Dashboard.addAssessment
+GET     /dashboard/{memberid}/deleteassessment/{assessmentid}  Dashboard.deleteAssessment
 GET     /about                                  About.index
 
 # Trainer page

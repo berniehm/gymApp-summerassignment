@@ -4,7 +4,7 @@
   </thead>
   <tbody>
     #{list items:_assessments, as:'assessment'}
-      #{assessment-row assessment:assessment /}
+      #{assessment-row-with-delete assessment:assessment, member:_member/}
     #{/list}
   </tbody>
 </table>

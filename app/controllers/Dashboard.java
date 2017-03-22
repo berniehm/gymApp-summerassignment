@@ -33,4 +33,14 @@ public class Dashboard extends Controller
     member.save();
     redirect("/dashboard");
   }
+
+  public static void deleteAssessment(Long memberid, Long assessmentid)
+  {
+    Member member = Member.findById(memberid);
+    Assessment assessment = Assessment.findById(assessmentid);
+    member.assessments.remove(assessment);
+    member.save();
+    assessment.delete();
+    redirect("/dashboard");
+  }
 }
