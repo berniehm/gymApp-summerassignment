@@ -18,6 +18,7 @@ public class Dashboard extends Controller
     Member member = Accounts.getLoggedInMember();
     List<Assessment> assessments = member.assessments;
     MemberStats memberStats = Analytics.generateMemberStats(member);
+    Collections.reverse(assessments);
     render("dashboard.html", member, assessments, memberStats);
   }
 

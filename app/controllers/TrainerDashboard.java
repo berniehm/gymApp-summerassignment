@@ -24,6 +24,7 @@ public class TrainerDashboard extends Controller
     Member member = Member.findById(id);
     List<Assessment> assessments = member.assessments;
     MemberStats memberStats = Analytics.generateMemberStats(member);
+    Collections.reverse(assessments);
     render("trainerassessment.html", member, assessments, memberStats);
   }
 
