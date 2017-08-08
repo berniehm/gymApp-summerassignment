@@ -11,19 +11,27 @@ POST   /authenticate                            Accounts.authenticate
 POST   /register                                Accounts.register
 GET    /settings                                Accounts.settings
 POST   /settings                                Accounts.updateSettings
+GET    /zumba                                   Accounts.zumba
+GET    /enroll                                  Accounts.enroll
+Post   /submit                                  Accounts.submit
+
+
 
 # Home page
 GET     /dashboard                              Dashboard.index
 POST    /dashboard/addassessment                Dashboard.addAssessment
 GET     /dashboard/{memberid}/deleteassessment/{assessmentid}  Dashboard.deleteAssessment
 GET     /about                                  About.index
+GET     /scheduledclasses                       Dashboard.deleteScheduledclasses
+GET      /scheduledclasses                      Dashboard.addSceduledclasses
 
 # Trainer page
 GET     /trainerdashboard                       TrainerDashboard.index
 GET     /trainerdashboard/deletemeber/{id}      TrainerDashboard.deleteMember
 GET     /trainerassessment/{id}                 TrainerDashboard.trainerAssessment
 POST    /editcomment/{id}                       TrainerDashboard.editComment
-
+POST    /trainerdashboard/createclass           TrainerDashboard.createClass
+GET     /trainerdashboard/allClasses             TrainerDashboard.allClasses
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

@@ -1,19 +1,32 @@
 <nav class="ui menu">
   <header class="ui header item"> Play Gym </header>
-  <div class="right menu">
-    <a id="dashboard" class="item" href="/dashboard"> Dashboard  </a>
-    <a id="about" class="item" href="/about"> About </a>
-    <div class="right menu">
-      <div class="ui dropdown item">
-        <i class="user icon"></i>
-        <div class="menu">
-          <a class="item" href="/settings">Settings</a>
-          <a class="item" href="/logout">Logout</a>
-        </div>
-      </div>
+    <div class="ui dropdown item"><i class=" blue user icon"></i>
+      <a class="item" href="/settings">Settings</a>
+      <a class="item" href="/logout">Logout</a>
     </div>
   </div>
+  <div class="right menu">
+    <a id="dashboard" class="item" href="/dashboard">Dashboard</a>
+      <i class="blue sidebar icon"></i>
+    <a id="about" class="item" href="/about"> About </a>
+      <i class="red sidebar icon"></i>
+
+    <div class="ui dropdown item"><a id="ScheduledClasses" class="item" href="/SchduledClasses">
+      </i>ScheduledClasses </a>
+      <i class=" blue user icon"></i>
+      <div class="menu">
+        <a class="item" href="/zumba">Zumba</a>
+        <a class="item" href="/pilates">Pilates</a>
+        <a class="item" href="/enroll">Enroll</a>
+      </div>
 </nav>
+
+
+
+
+
+
+
 
 <script>
   $("#${_id}").addClass("active item");

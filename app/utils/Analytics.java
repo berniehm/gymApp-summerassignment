@@ -69,7 +69,7 @@ public class Analytics
 
     Logger.info("Ideal Weigfht" + idealBodyWeight);
     return ((idealBodyWeight <= (weight + 2.0))
-        && (idealBodyWeight >= (weight - 2.0))
+            && (idealBodyWeight >= (weight - 2.0))
     );
   }
 }

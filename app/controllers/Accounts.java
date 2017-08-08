@@ -5,31 +5,26 @@ import models.Trainer;
 import play.Logger;
 import play.mvc.Controller;
 
-public class Accounts extends Controller
-{
-  public static void index()
-  {
+public class Accounts extends Controller {
+  public static void index() {
     render("about.html");
   }
 
-  public static void signup()
-  {
+  public static void signup() {
     render("signup.html");
   }
 
-  public static void login()
-  {
+  public static void login() {
     render("login.html");
   }
 
-  public static void settings()
-  {
+
+  public static void settings() {
     Member member = getLoggedInMember();
     render("settings.html", member);
   }
 
-  public static void updateSettings(Member member)
-  {
+  public static void updateSettings(Member member) {
     Member loggedInMember = getLoggedInMember();
 
     loggedInMember.email = member.email;
@@ -45,14 +40,12 @@ public class Accounts extends Controller
   }
 
 
-  public static void logout()
-  {
+  public static void logout() {
     session.clear();
     index();
   }
 
-  public static Member getLoggedInMember()
-  {
+  public static Member getLoggedInMember() {
     Member member = null;
     if (session.contains("logged_in_Memberid")) {
       String memberId = session.get("logged_in_Memberid");
@@ -63,16 +56,14 @@ public class Accounts extends Controller
     return member;
   }
 
-  public static void register(String email, String name, String password, String address, String gender, double height, double startingweight)
-  {
+  public static void register(String email, String name, String password, String address, String gender, double height, double startingweight) {
     Logger.info(name + " " + email);
     Member member = new Member(email, name, password, address, gender, height, startingweight);
     member.save();
     index();
   }
-
-  public static void authenticate(String email, String password)
-  {
+}
+  public static void authenticate(String email, String password) {
     Logger.info("Attempting to authenticate with " + email + ":" + password);
 
     Member member = Member.findByEmail(email);
@@ -80,16 +71,13 @@ public class Accounts extends Controller
       Logger.info("Authentication successful");
       session.put("logged_in_Memberid", member.id);
       Dashboard.index();
+    } else{
+    if ((trainer != null) && (trainer.checkPassword(password) == true)) {
+      Logger.info("Authentication successful");
+      session.put("logged_in_Trainerid", trainer.id);
+      TrainerDashboard.index();
     } else {
-      Trainer trainer = Trainer.findByEmail(email);
-      if ((trainer != null) && (trainer.checkPassword(password) == true)) {
-        Logger.info("Authentication successful");
-        session.put("logged_in_Trainerid", trainer.id);
-        TrainerDashboard.index();
-      } else {
-        Logger.info("Authentication failed");
-        login();
-      }
+      Logger.info("Authentication failed");
+      login();
     }
   }
-}

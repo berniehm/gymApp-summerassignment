@@ -28,15 +28,15 @@ public class TrainerDashboard extends Controller
     render("trainerassessment.html", member, assessments, memberStats);
   }
 
-  public static void editComment(Long id, String comment)
-  {
+  public static void editComment(Long id, String comment) {
     Logger.info("Comment " + comment);
     Assessment assessment = Assessment.findById(id);
     assessment.comment = comment;
     assessment.save();
     redirect("/trainerdashboard");
-  }
 
+  }
+  
   public static void deleteMember(Long id)
   {
     Member member = Member.findById(id);
@@ -46,3 +46,4 @@ public class TrainerDashboard extends Controller
     redirect("/trainerdashboard");
   }
 }
+
