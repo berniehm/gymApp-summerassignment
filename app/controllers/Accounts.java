@@ -62,7 +62,7 @@ public class Accounts extends Controller {
     member.save();
     index();
   }
-}
+
   public static void authenticate(String email, String password) {
     Logger.info("Attempting to authenticate with " + email + ":" + password);
 
@@ -71,7 +71,8 @@ public class Accounts extends Controller {
       Logger.info("Authentication successful");
       session.put("logged_in_Memberid", member.id);
       Dashboard.index();
-    } else{
+    } else {
+      Trainer trainer = Trainer.findByEmail(email);
     if ((trainer != null) && (trainer.checkPassword(password) == true)) {
       Logger.info("Authentication successful");
       session.put("logged_in_Trainerid", trainer.id);
@@ -80,4 +81,6 @@ public class Accounts extends Controller {
       Logger.info("Authentication failed");
       login();
     }
+    }
   }
+}
