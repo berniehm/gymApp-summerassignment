@@ -57,7 +57,7 @@ public class TrainerDashboard extends Controller
   public static void viewClass()
   {
     Logger.info("Rendering Show Create A Class");
-    render("../views/tags/scheduledClass/show-class.html");
+    render("../views/tags/Scheduledclass/show-class.html");
   }
 
   public static void allClasses()
@@ -65,7 +65,7 @@ public class TrainerDashboard extends Controller
     Logger.info("Rendering All Classes");
     Trainer trainer = Accounts.getLoggedInTrainer();
     List<Scheduledclass> scheduledClasses = trainer.classes;
-    render("../views/tags/scheduledClass/allclasses.html", trainer, Scheduledclasses);
+    render("../views/tags/Scheduledclass/allclasses.html", trainer, scheduledClasses);
   }
 
 
