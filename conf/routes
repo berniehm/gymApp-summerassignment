@@ -1,3 +1,4 @@
+
 # Routes
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
@@ -39,6 +40,7 @@ POST    /trainerdashboard/addassessment                                         
 GET     /trainerdashboard/{memberid}/deleteassessment/{assessmentid}                            TrainerDashboard.deleteAssessment
 GET     /trainerdashboard/showedit/{assessmentid}/{memberid}                                    TrainerDashboard.showEdit
 POST    /trainerdashboard/saveedit                                                              TrainerDashboard.saveEdit
+POST    /trainerdashboard/creategoal                                                           TrainerDashboard.createGoal
 # Ignore favicon requests
 GET     /favicon.ico                            404
 # Map static resources from the /app/public folder to the /public path

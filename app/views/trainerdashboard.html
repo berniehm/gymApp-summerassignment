@@ -52,3 +52,23 @@
 </form>
 
 <iframe src="https://giphy.com/embed/3o6MbfkwBRevaBtoju" width="480" height="362" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/season-17-the-simpsons-17x12-3o6MbfkwBRevaBtoju">via GIPHY</a></p>
+<form class="ui inverted yellow center aligned segment form" name="creategoal" action="/trainerdashboard/creategoal" method="POST">
+  <div class="three fields">
+    <div class="field">
+      <label>Goal name</label>
+      <input placeholder="Goal name"  name="name" required>
+    </div>
+    <div class="field">
+      <label>Description</label>
+      <textarea rows="2" name="description"></textarea>
+    </div>
+    <div class="field">
+      <label>Date</label>
+      <input placeholder="" type="number" name="date" required>
+    </div>
+  </div>
+
+  <button class="ui blue submit button"> Create a Goal </button>
+</form>
+
+
