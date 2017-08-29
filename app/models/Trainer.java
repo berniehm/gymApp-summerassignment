@@ -18,6 +18,9 @@ public class Trainer extends Model
   @OneToMany(cascade = CascadeType.ALL)
   public List<Scheduledclass> classes = new ArrayList<>();
 
+  @OneToMany(cascade = CascadeType.ALL)
+  public List<Goals> goals=new ArrayList<>();
+
   public Trainer(String email, String password)
   {
     this.email = email;
